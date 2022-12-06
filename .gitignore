@@ -1,0 +1,8 @@
+*.h5
+logs
+*.npy
+*.jpg
+tf_logs
+*.MP4
+*.mp4
+*.avi
