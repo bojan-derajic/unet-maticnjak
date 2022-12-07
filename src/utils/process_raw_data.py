@@ -68,7 +68,9 @@ def process_raw_data(raw_data_path, train_path, test_path, member_names, label_n
                 temp_list = np.concatenate(temp_list, axis=2)
                 temp_list = np.expand_dims(np.max(temp_list, axis=2), axis=2)
                 mask_list.append(temp_list)
-            
+                        
+            mask_list[1][mask_list[0] > 0] = 0
+
             mask_B = np.zeros_like(mask_list[0])
             mask_B[(mask_list[0] + mask_list[1]) == 0] = 255
             mask_list.append(mask_B)
