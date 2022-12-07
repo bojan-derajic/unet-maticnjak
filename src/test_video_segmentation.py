@@ -13,7 +13,7 @@ if __name__ == "__main__":
     out_video_path = "../test_video_segmentation/results/test_video_result_" + now.strftime("%Y%m%d-%H%M%S") + ".avi"
     model_path = "../saved_models/unet_model.h5"
 
-    unet_model = keras.models.load_model(model_path)
+    unet_model = keras.models.load_model(model_path, compile=False)
 
     cap = cv.VideoCapture(test_video_path)
 
